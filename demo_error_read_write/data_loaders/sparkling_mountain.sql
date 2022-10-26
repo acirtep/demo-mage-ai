@@ -1,0 +1,1 @@
+select * from raw_customers_pandas where id=1;

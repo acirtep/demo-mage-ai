@@ -1,0 +1,7 @@
+version: 0.1.1
+default:
+  POSTGRES_DBNAME: postgres
+  POSTGRES_HOST: postgres_db
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_PORT: 5432
+  POSTGRES_USER: postgres

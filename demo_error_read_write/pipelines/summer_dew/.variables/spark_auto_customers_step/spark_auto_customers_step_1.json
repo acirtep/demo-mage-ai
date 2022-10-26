@@ -1,0 +1,1 @@
+"{\"data\":[\"/usr/local/lib/python3.10/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found\",\"\"],\"error\":null,\"execution_state\":null,\"metadata\":null,\"msg_id\":\"604dcad0-d106dffb3b29eb705acffbe8_13_2\",\"msg_type\":\"stream\",\"type\":\"text/plain\",\"uuid\":\"spark_auto_customers_step\",\"pipeline_uuid\":null}"

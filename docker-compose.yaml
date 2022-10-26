@@ -1,0 +1,46 @@
+version: '3.2'
+
+services:
+  data_processing_app:
+    container_name: demo_mage_app
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres_db
+    links:
+      - postgres_db:postgres_db
+    networks:
+      - app-tier
+    environment:
+      DATA_OUTPUT_LANDING_ZONE: /app/demo_error_read_write/data_setup/landing_zone
+    volumes:
+      - ./demo_error_read_write:/app/demo_error_read_write
+    ports:
+      - "6789:6789"
+    command:
+      - bash
+      - -c
+      - mage start demo_error_read_write
+#      - tail -f /dev/null
+
+
+  postgres_db:
+    container_name: demo_mage_pg
+    image: postgres:15.0
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+    privileged: true
+    ports:
+      - "5436:5432"
+    networks:
+      - app-tier
+    volumes:
+      - ./postgres:/docker-entrypoint-initdb.d
+
+networks:
+  app-tier:
+    driver: bridge

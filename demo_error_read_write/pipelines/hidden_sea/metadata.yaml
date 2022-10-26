@@ -1,0 +1,106 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - spark_managed_customers_step
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_auto_customers_step
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_customers
+  uuid: spark_auto_customers_step
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - spark_auto_customers_step
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_customers
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - generate_corrupted_customers
+  uuid: export_file_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - load_raw_customers_managed
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_managed_customers_step
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - spark_auto_customers_step
+  uuid: spark_managed_customers_step
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_customers_managed
+  status: failed
+  type: data_exporter
+  upstream_blocks:
+  - spark_managed_customers_step
+  uuid: load_raw_customers_managed
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - export_file_customers
+  - load_raw_customers_pd_driven
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: generate_corrupted_customers
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: generate_corrupted_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: check_spark_data
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: check_spark_data
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_customers_pd_driven
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - generate_corrupted_customers
+  uuid: load_raw_customers_pd_driven
+- all_upstream_blocks_executed: true
+  configuration:
+    data_provider: postgres
+    data_provider_profile: default
+    export_write_policy: append
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: sql
+  name: sparkling mountain
+  status: failed
+  type: data_loader
+  upstream_blocks: []
+  uuid: sparkling_mountain
+name: hidden sea
+type: python
+uuid: hidden_sea
+widgets: []
