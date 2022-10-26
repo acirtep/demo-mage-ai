@@ -9,4 +9,4 @@ Article 1: https://ownyourdata.ai/wp/traditional-vs-modern-analytics-data-proces
 1. `docker-compose up --build`
 
 # clean
-1. `docker-compose down
+1. `docker-compose down`
