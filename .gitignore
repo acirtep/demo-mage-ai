@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /mage-ai.db
+demo_error_read_write/data_setup/landing_zone/delta/
+demo_error_read_write/data_setup/landing_zone/*.txt
