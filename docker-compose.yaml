@@ -17,13 +17,17 @@ services:
       DATA_OUTPUT_LANDING_ZONE: /app/demo_error_read_write/data_setup/landing_zone
     volumes:
       - ./demo_error_read_write:/app/demo_error_read_write
+      - ./database_management:/app/database_management
+      - ./alembic.ini:/app/alembic.ini
     ports:
       - "6789:6789"
     command:
       - bash
       - -c
-      - mage start demo_error_read_write
-#      - tail -f /dev/null
+#      - |
+#      - alembic upgrade head
+#      - mage start demo_error_read_write
+      - tail -f /dev/null
 
 
   postgres_db:

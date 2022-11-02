@@ -1,0 +1,1 @@
+{"column_types": {"id": "number", "order_timestamp": "datetime", "customer_id": "number", "order_status": "true_or_false", "order_amount": "number_with_decimals", "order_currency": "true_or_false", "products": "list"}}

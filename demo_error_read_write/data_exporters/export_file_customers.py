@@ -1,6 +1,7 @@
 from mage_ai.io.file import FileIO
 from pandas import DataFrame
 import os
+from datetime import datetime
 
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
@@ -15,5 +16,5 @@ def export_data_to_file(df: DataFrame, **kwargs) -> None:
     """
 
     filepath = os.getenv('DATA_OUTPUT_LANDING_ZONE')
-    filepath = f"{filepath}/customers.txt"
+    filepath = f"{filepath}/customers-{datetime.today().strftime('%Y-%m-%d')}.csv"
     FileIO().export(df, filepath, 'csv', **{'sep': '\t', 'index': False})

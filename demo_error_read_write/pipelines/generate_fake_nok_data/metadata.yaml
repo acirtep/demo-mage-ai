@@ -1,0 +1,57 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - export_file_orders
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: generate_corrupted_orders
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: generate_corrupted_orders
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - export_file_customers
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: generate_corrupted_customers
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: generate_corrupted_customers
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_customers
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - generate_corrupted_customers
+  uuid: export_file_customers
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_orders
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - generate_corrupted_orders
+  uuid: export_file_orders
+name: generate_fake_NOK_data
+type: python
+uuid: generate_fake_nok_data
+widgets: []

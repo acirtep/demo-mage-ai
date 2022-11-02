@@ -1,0 +1,59 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - load_raw_customers_pd_driven
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: add_cut_off_date
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - read_customer_file
+  uuid: add_cut_off_date
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - dim_customer_dbt
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_customers_pd_driven
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - add_cut_off_date
+  uuid: load_raw_customers_pd_driven
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - add_cut_off_date
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: read_customer_file
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: read_customer_file
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: dim_customer_dbt
+  status: executed
+  type: data_loader
+  upstream_blocks:
+  - load_raw_customers_pd_driven
+  uuid: dim_customer_dbt
+name: modern_load_new
+type: python
+uuid: modern_load_new
+widgets: []

@@ -1,0 +1,1 @@
+[{"title": "Remove columns with single value", "message": "Remove columns with a single unique value to reduce the amount of redundant data.", "status": "not_applied", "action_payload": {"action_type": "remove", "action_arguments": ["order_currency"], "action_code": "", "action_options": {}, "action_variables": {}, "axis": "column", "outputs": []}}]

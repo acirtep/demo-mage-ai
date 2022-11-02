@@ -1,0 +1,57 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - export_file_customers
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: get_fake_customers
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: get_fake_customers
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - export_file_orders
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: get_fake_orders
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: get_fake_orders
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_orders
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - get_fake_orders
+  uuid: export_file_orders
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_customers
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - get_fake_customers
+  uuid: export_file_customers
+name: generate_fake_OK_data
+type: python
+uuid: generate_fake_ok_data
+widgets: []

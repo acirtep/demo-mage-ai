@@ -7,9 +7,14 @@ import os
 def generate_random_customer(corrupted: bool = False):
     records = []
     faker = Faker()
-    for i in range(1, 10):
+    start = 1
+    end = 10
+    if corrupted:
+        start = 8
+        end = 12
+    for i in range(start, end):
         records.append([
-            random.choice(['a', 'b', 'c']) if corrupted else i,
+            random.choice(['a', 'b', 'c']) if corrupted and i % 2 else i,
             faker.email(),
             faker.first_name(),
             faker.last_name()
@@ -21,9 +26,14 @@ def generate_random_customer(corrupted: bool = False):
 def generate_random_orders(corrupted: bool = False):
     records = []
     faker = Faker()
+    start = 1
+    end = 30
+    if corrupted:
+        start = 26
+        end = 36
     for i in range(1, 30):
         records.append([
-            random.choice(['a', 'b', 'c']) if corrupted else i,
+            random.choice(['a', 'b', 'c']) if corrupted and i % 2 else i,
             faker.date_time_between('-10d', '-1d').strftime("%Y-%m-%d %H:%M:%S"),
             random.randint(1, 11),
             random.choice(['NEW', 'DELIVERED']),

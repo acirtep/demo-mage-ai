@@ -1,0 +1,5 @@
+sources:
+- name: mage_demo
+  tables:
+  - name: modern_load_load_raw_customers_pd_driven
+version: 2

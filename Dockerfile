@@ -11,3 +11,5 @@ RUN pip3 install poetry
 
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-interaction --no-ansi
+RUN pip3 install psycopg2-binary --no-binary psycopg2-binary
+RUN pip3 install dbt-postgres
