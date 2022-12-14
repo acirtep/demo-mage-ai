@@ -140,5 +140,20 @@ demo_error_read_write/data_setup/landing_zone/*.csv
 /demo_error_read_write/pipelines/modern_load_new/.variables/read_customer_file/
 /demo_error_read_write/pipelines/modern_load_new/.variables/read_customer_file/output_0/
 .logs
-.variables
+.variables/*
+/demo_error_read_write/pipelines/traditional_load/.variables/1/
+/demo_error_read_write/pipelines/traditional_load/.variables/3/
+/demo_error_read_write/pipelines/traditional_load/.variables/add_cut_off_date/
+/demo_error_read_write/pipelines/traditional_load/.variables/read_customer_file/
+/demo_error_read_write/pipelines/traditional_load/.variables/table_for_add_cut_off_date_1668619429720/
+/demo_error_read_write/pipelines/traditional_load/.variables/write_dim_customer/
+/demo_error_read_write/pipelines/traditional_load/.variables/write_raw_customer/
+/demo_error_read_write/pipelines/showcase_managed_flow/.variables/
+/demo_error_read_write/pipelines/showcase_managed_corrupted/.variables/
+/demo_error_read_write/pipelines/showcase_managed2/.variables/
+/demo_error_read_write/pipelines/generate_fake_ok_data/.variables/
+/demo_error_read_write/pipelines/generate_fake_nok_data/.variables/
+/demo_error_read_write/pipelines/traditional_load/.variables/1/
+/demo_error_read_write/pipelines/traditional_load/.variables/3/
+/demo_error_read_write/pipelines/traditional_load/.variables/add_cut_off_date/
 

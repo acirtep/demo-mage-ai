@@ -34,12 +34,12 @@ blocks:
   executor_type: local_python
   language: python
   name: write_raw_customer
-  status: failed
+  status: executed
   type: data_exporter
   upstream_blocks:
   - add_cut_off_date
   uuid: write_raw_customer
-- all_upstream_blocks_executed: false
+- all_upstream_blocks_executed: true
   configuration:
     file_path: null
   downstream_blocks: []
