@@ -1,0 +1,74 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - add_cut_off_date
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: read_customer_file
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: read_customer_file
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - table_for_add_cut_off_date_1668619429720
+  - write_raw_customer
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: add_cut_off_date
+  status: executed
+  type: transformer
+  upstream_blocks:
+  - read_customer_file
+  uuid: add_cut_off_date
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks:
+  - write_dim_customer
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: write_raw_customer
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - add_cut_off_date
+  uuid: write_raw_customer
+- all_upstream_blocks_executed: true
+  configuration:
+    file_path: null
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: write_dim_customer
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - write_raw_customer
+  uuid: write_dim_customer
+name: traditional_load
+type: python
+uuid: traditional_load
+widgets:
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    limit: 10
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: table for add_cut_off_date 1668619429720
+  status: executed
+  type: chart
+  upstream_blocks:
+  - add_cut_off_date
+  uuid: table_for_add_cut_off_date_1668619429720

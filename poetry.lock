@@ -238,17 +238,6 @@ python-versions = ">=3.5.0"
 unicode_backport = ["unicodedata2"]
 
 [[package]]
-name = "click"
-version = "8.1.3"
-description = "Composable command line interface toolkit"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-colorama = {version = "*", markers = "platform_system == \"Windows\""}
-
-[[package]]
 name = "colorama"
 version = "0.4.5"
 description = "Cross-platform colored terminal text."
@@ -344,37 +333,6 @@ python-versions = "*"
 
 [package.extras]
 devel = ["colorama", "json-spec", "jsonschema", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
-
-[[package]]
-name = "Flask"
-version = "1.1.2"
-description = "A simple framework for building complex web applications."
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[package.dependencies]
-click = ">=5.1"
-itsdangerous = ">=0.24"
-Jinja2 = ">=2.10.1"
-Werkzeug = ">=0.15"
-
-[package.extras]
-dev = ["coverage", "pallets-sphinx-themes", "pytest", "sphinx", "sphinx-issues", "sphinxcontrib-log-cabinet", "tox"]
-docs = ["pallets-sphinx-themes", "sphinx", "sphinx-issues", "sphinxcontrib-log-cabinet"]
-dotenv = ["python-dotenv"]
-
-[[package]]
-name = "Flask-Cors"
-version = "3.0.10"
-description = "A Flask extension adding a decorator for CORS support"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-Flask = ">=0.9"
-Six = "*"
 
 [[package]]
 name = "frozenlist"
@@ -503,11 +461,11 @@ testing = ["Django (<3.1)", "colorama", "docopt", "pytest (<7.0.0)"]
 
 [[package]]
 name = "Jinja2"
-version = "3.0.3"
+version = "3.1.2"
 description = "A very fast and expressive template engine."
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 MarkupSafe = ">=2.0"
@@ -639,7 +597,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "mage-ai"
-version = "0.6.3"
+version = "0.7.29"
 description = "Mage is a tool for building and deploying data pipelines."
 category = "main"
 optional = false
@@ -649,12 +607,10 @@ python-versions = ">=3.6"
 alembic = ">=1.7.5"
 croniter = "1.3.7"
 Faker = "4.14.0"
-Flask = ">=1.1.2,<1.2.0"
-flask-cors = "3.0.10"
 ipykernel = "6.15.0"
 ipython = "*"
 itsdangerous = ">=1.1.0,<1.2.0"
-Jinja2 = ">=3.0.3,<3.1.0"
+Jinja2 = "3.1.2"
 joblib = ">=1.1.0"
 jupyter-client = "7.3.4"
 jupyter-server-proxy = "3.2.1"
@@ -670,16 +626,16 @@ simplejson = "*"
 six = ">=1.15.0"
 sqlalchemy = ">=1.4.20"
 tornado = "6.1"
-Werkzeug = ">=2.0.0,<2.1.0"
 
 [package.extras]
-all = ["azure-identity", "azure-keyvault-certificates", "azure-keyvault-secrets", "azure-storage-blob", "boto3 (==1.24.19)", "botocore (==1.27.19)", "db-dtypes (==1.0.2)", "google-cloud-bigquery (==3.2.0)", "google-cloud-storage (==2.5.0)", "kafka-python", "opensearch-py", "psycopg2-binary (==2.9.3)", "redshift-connector (==2.0.907)", "requests-aws4auth", "snowflake-connector-python (==2.7.9)"]
+all = ["azure-identity", "azure-keyvault-certificates", "azure-keyvault-secrets", "azure-storage-blob", "boto3 (==1.24.19)", "botocore (==1.27.19)", "db-dtypes (==1.0.2)", "dbt-bigquery (==1.3.0)", "dbt-core (==1.3.0)", "dbt-postgres (==1.3.0)", "dbt-snowflake (==1.3.0)", "google-cloud-bigquery (>=2.34.4,<2.35.0)", "google-cloud-storage (==2.5.0)", "kafka-python", "opensearch-py", "psycopg2-binary (==2.9.3)", "redshift-connector (==2.0.909)", "requests-aws4auth", "snowflake-connector-python (==2.7.9)"]
 azure = ["azure-identity", "azure-keyvault-certificates", "azure-keyvault-secrets", "azure-storage-blob"]
-bigquery = ["db-dtypes (==1.0.2)", "google-cloud-bigquery (==3.2.0)"]
+bigquery = ["db-dtypes (==1.0.2)", "google-cloud-bigquery (>=2.34.4,<2.35.0)"]
+dbt = ["dbt-bigquery (==1.3.0)", "dbt-core (==1.3.0)", "dbt-postgres (==1.3.0)", "dbt-snowflake (==1.3.0)"]
 google-cloud-storage = ["google-cloud-storage (==2.5.0)"]
 hdf5 = ["tables (==3.7.0)"]
 postgres = ["psycopg2-binary (==2.9.3)"]
-redshift = ["boto3 (==1.24.19)", "redshift-connector (==2.0.907)"]
+redshift = ["boto3 (==1.24.19)", "redshift-connector (==2.0.909)"]
 s3 = ["boto3 (==1.24.19)", "botocore (==1.27.19)"]
 snowflake = ["snowflake-connector-python (==2.7.9)"]
 spark = ["boto3 (==1.24.19)", "botocore (==1.27.19)"]
@@ -1363,17 +1319,6 @@ optional = ["python-socks", "wsaccel"]
 test = ["websockets"]
 
 [[package]]
-name = "Werkzeug"
-version = "2.0.3"
-description = "The comprehensive WSGI web application library."
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.extras]
-watchdog = ["watchdog"]
-
-[[package]]
 name = "yarl"
 version = "1.8.1"
 description = "Yet another URL library"
@@ -1400,7 +1345,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "7fcbebc9d56958b65e42950c5f3772129d99eef2d14a647c536f85437c7db661"
+content-hash = "0455b407d20787d085b5bb549349f81af1b27c372ceffa3fd4788b693fc3da1b"
 
 [metadata.files]
 aiohttp = [
@@ -1641,10 +1586,6 @@ charset-normalizer = [
     {file = "charset-normalizer-2.0.12.tar.gz", hash = "sha256:2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"},
     {file = "charset_normalizer-2.0.12-py3-none-any.whl", hash = "sha256:6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"},
 ]
-click = [
-    {file = "click-8.1.3-py3-none-any.whl", hash = "sha256:bb4d8133cb15a609f44e8213d9b391b0809795062913b383c62be0ee95b1db48"},
-    {file = "click-8.1.3.tar.gz", hash = "sha256:7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"},
-]
 colorama = [
     {file = "colorama-0.4.5-py2.py3-none-any.whl", hash = "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da"},
     {file = "colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
@@ -1700,14 +1641,6 @@ Faker = [
 fastjsonschema = [
     {file = "fastjsonschema-2.16.2-py3-none-any.whl", hash = "sha256:21f918e8d9a1a4ba9c22e09574ba72267a6762d47822db9add95f6454e51cc1c"},
     {file = "fastjsonschema-2.16.2.tar.gz", hash = "sha256:01e366f25d9047816fe3d288cbfc3e10541daf0af2044763f3d0ade42476da18"},
-]
-Flask = [
-    {file = "Flask-1.1.2-py2.py3-none-any.whl", hash = "sha256:8a4fdd8936eba2512e9c85df320a37e694c93945b33ef33c89946a340a238557"},
-    {file = "Flask-1.1.2.tar.gz", hash = "sha256:4efa1ae2d7c9865af48986de8aeb8504bf32c7f3d6fdc9353d34b21f4b127060"},
-]
-Flask-Cors = [
-    {file = "Flask-Cors-3.0.10.tar.gz", hash = "sha256:b60839393f3b84a0f3746f6cdca56c1ad7426aa738b70d6c61375857823181de"},
-    {file = "Flask_Cors-3.0.10-py2.py3-none-any.whl", hash = "sha256:74efc975af1194fc7891ff5cd85b0f7478be4f7f59fe158102e91abb72bb4438"},
 ]
 frozenlist = [
     {file = "frozenlist-1.3.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:5f271c93f001748fc26ddea409241312a75e13466b06c94798d1a341cf0e6989"},
@@ -1863,8 +1796,8 @@ jedi = [
     {file = "jedi-0.18.1.tar.gz", hash = "sha256:74137626a64a99c8eb6ae5832d99b3bdd7d29a3850fe2aa80a4126b2a7d949ab"},
 ]
 Jinja2 = [
-    {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
-    {file = "Jinja2-3.0.3.tar.gz", hash = "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"},
+    {file = "Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
+    {file = "Jinja2-3.1.2.tar.gz", hash = "sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"},
 ]
 jmespath = [
     {file = "jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"},
@@ -1899,8 +1832,8 @@ jupyterlab-pygments = [
     {file = "jupyterlab_pygments-0.2.2.tar.gz", hash = "sha256:7405d7fde60819d905a9fa8ce89e4cd830e318cdad22a0030f7a901da705585d"},
 ]
 mage-ai = [
-    {file = "mage-ai-0.6.3.tar.gz", hash = "sha256:df521bb918c5bedec890d57f81bb61e131a8f2bf8b89eca5c7253a8d06a05523"},
-    {file = "mage_ai-0.6.3-py3-none-any.whl", hash = "sha256:6143b81596924d810a1e8370d1a5160d3f097f3b1405bef6114c191b74d7f53f"},
+    {file = "mage-ai-0.7.29.tar.gz", hash = "sha256:1ef8a2634560e31fa4d7268d2c64b3f6c740cbeccaa61592eafbf980a2e9efb1"},
+    {file = "mage_ai-0.7.29-py3-none-any.whl", hash = "sha256:a190947b990bf216548001bb0ebdd07c79f190aaf8616bd9aa9bbbf29d4ccd62"},
 ]
 Mako = [
     {file = "Mako-1.2.3-py3-none-any.whl", hash = "sha256:c413a086e38cd885088d5e165305ee8eed04e8b3f8f62df343480da0a385735f"},
@@ -2669,10 +2602,6 @@ webencodings = [
 websocket-client = [
     {file = "websocket-client-1.4.1.tar.gz", hash = "sha256:f9611eb65c8241a67fb373bef040b3cf8ad377a9f6546a12b620b6511e8ea9ef"},
     {file = "websocket_client-1.4.1-py3-none-any.whl", hash = "sha256:398909eb7e261f44b8f4bd474785b6ec5f5b499d4953342fe9755e01ef624090"},
-]
-Werkzeug = [
-    {file = "Werkzeug-2.0.3-py3-none-any.whl", hash = "sha256:1421ebfc7648a39a5c58c601b154165d05cf47a3cd0ccb70857cbdacf6c8f2b8"},
-    {file = "Werkzeug-2.0.3.tar.gz", hash = "sha256:b863f8ff057c522164b6067c9e28b041161b4be5ba4d0daceeaa50a163822d3c"},
 ]
 yarl = [
     {file = "yarl-1.8.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:abc06b97407868ef38f3d172762f4069323de52f2b70d133d096a48d72215d28"},

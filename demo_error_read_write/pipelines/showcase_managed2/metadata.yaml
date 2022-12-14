@@ -1,0 +1,452 @@
+blocks:
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - summary_overview_for_get_fake_customers
+  - summary_overview_for_get_fake_customers
+  - feature_profiles_for_get_fake_orders
+  - load_raw_customers_pd_driven
+  - export_file_customers
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: get_fake_customers
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: get_fake_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - table_for_get_fake_orders_1666523599209
+  - summary_overview_for_get_fake_orders
+  - summary_overview_for_get_fake_orders
+  - bar_chart_for_get_fake_orders_1666523644330
+  - table_for_get_fake_orders_1666523753322
+  - bar_chart_for_get_fake_orders_1666523763535
+  - table_for_get_fake_customers_1666523202201
+  - summary_overview_for_get_fake_orders
+  - table_for_get_fake_customers_1666526000880
+  - load_raw_orders_pd_driven
+  - export_file_orders
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: get_fake_orders
+  status: executed
+  type: data_loader
+  upstream_blocks: []
+  uuid: get_fake_orders
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_customers_pd_driven
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - get_fake_customers
+  uuid: load_raw_customers_pd_driven
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_orders_pd_driven
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - get_fake_orders
+  uuid: load_raw_orders_pd_driven
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: pandas_customer
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: pandas_customer
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: pandas_orders
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: pandas_orders
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - spark_auto_orders_step
+  - load_raw_orders_managed
+  - spark_managed_orders_step
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_orders
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - get_fake_orders
+  uuid: export_file_orders
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks:
+  - spark_auto_customers_step
+  - load_raw_customers_managed
+  - spark_managed_customers_step
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: export_file_customers
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - get_fake_customers
+  uuid: export_file_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_auto_customers
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: spark_auto_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_auto_customers_step
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_customers
+  uuid: spark_auto_customers_step
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_orders
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: spark_orders
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_auto_orders_step
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_orders
+  uuid: spark_auto_orders_step
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: pg_schema_customers
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: pg_schema_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_customers_managed
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_customers
+  uuid: load_raw_customers_managed
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: pg_schema_orders
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: pg_schema_orders
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: load_raw_orders_managed
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_orders
+  uuid: load_raw_orders_managed
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_schema_customers
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: spark_schema_customers
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_managed_customers_step
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_customers
+  uuid: spark_managed_customers_step
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_schema_orders
+  status: updated
+  type: scratchpad
+  upstream_blocks: []
+  uuid: spark_schema_orders
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: spark_managed_orders_step
+  status: executed
+  type: data_exporter
+  upstream_blocks:
+  - export_file_orders
+  uuid: spark_managed_orders_step
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: broken feather
+  status: not_executed
+  type: scratchpad
+  upstream_blocks: []
+  uuid: broken_feather
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: black silence
+  status: not_executed
+  type: scratchpad
+  upstream_blocks: []
+  uuid: black_silence
+- all_upstream_blocks_executed: true
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: autumn rain
+  status: not_executed
+  type: scratchpad
+  upstream_blocks: []
+  uuid: autumn_rain
+- all_upstream_blocks_executed: true
+  configuration:
+    data_provider: postgres
+    data_provider_profile: default
+    data_provider_schema: ''
+    export_write_policy: append
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: sql
+  name: summer field
+  status: failed
+  type: data_loader
+  upstream_blocks: []
+  uuid: summer_field
+name: showcase_managed2
+type: python
+uuid: showcase_managed2
+widgets:
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    limit: 10
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: table for get_fake_customers 1666523202201
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: table_for_get_fake_customers_1666523202201
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    height: 3000
+    index: stats
+    x: headers
+    y: rows
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: summary overview for get_fake_customers
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_customers
+  uuid: summary_overview_for_get_fake_customers
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    limit: 10
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: table for get_fake_orders 1666523599209
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: table_for_get_fake_orders_1666523599209
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    height: 3000
+    index: stats
+    x: headers
+    y: rows
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: summary overview for get_fake_orders
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: summary_overview_for_get_fake_orders
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_style: vertical
+    chart_type: bar chart
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: bar chart for get_fake_orders 1666523644330
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: bar_chart_for_get_fake_orders_1666523644330
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    height: 3000
+    index: stats
+    x: columns
+    y: rows
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: feature profiles for get_fake_orders
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_customers
+  uuid: feature_profiles_for_get_fake_orders
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    limit: 10
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: table for get_fake_orders 1666523753322
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: table_for_get_fake_orders_1666523753322
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_style: vertical
+    chart_type: bar chart
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: bar chart for get_fake_orders 1666523763535
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: bar_chart_for_get_fake_orders_1666523763535
+- all_upstream_blocks_executed: true
+  configuration:
+    chart_type: table
+    limit: 10
+    x: x
+    y: y
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  language: python
+  name: table for get_fake_customers 1666526000880
+  status: executed
+  type: chart
+  upstream_blocks:
+  - get_fake_orders
+  uuid: table_for_get_fake_customers_1666526000880

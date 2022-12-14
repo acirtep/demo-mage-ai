@@ -1,0 +1,9 @@
+sources:
+- name: postgres
+  tables:
+  - name: raw_customers_pandas
+- name: mage_demo
+  tables:
+  - name: modern_load_new_dim_customer_dbt
+  - name: modern_load_new_load_raw_customers_pd_driven
+version: 2
