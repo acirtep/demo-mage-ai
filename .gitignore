@@ -138,3 +138,7 @@ demo_error_read_write/data_setup/landing_zone/*.csv
 /demo_error_read_write/pipelines/modern_load_new/.variables/dim_customer_dbt/
 /demo_error_read_write/pipelines/modern_load_new/.variables/load_raw_customers_pd_driven/
 /demo_error_read_write/pipelines/modern_load_new/.variables/read_customer_file/
+/demo_error_read_write/pipelines/modern_load_new/.variables/read_customer_file/output_0/
+.logs
+.variables
+
